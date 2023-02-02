@@ -21,6 +21,7 @@ func (row Row) ContainsOnly(entry string) bool {
 	return true
 }
 
+// Liefert die Anzahl der Felder in der Zeile, die mit entry belegt sind.
 func (row Row) EntryCount(entry string) int {
 	count := 0
 	for _, e := range row {

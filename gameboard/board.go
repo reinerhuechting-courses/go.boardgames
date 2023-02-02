@@ -87,6 +87,7 @@ func (board Board) AnyDiagContainsOnly(entry string) bool {
 		board.PrincipalDiag2().ContainsOnly(entry)
 }
 
+// Liefert die Anzahl der Felder auf dem Spielfeld, die mit entry belegt sind.
 func (board Board) EntryCount(entry string) int {
 	count := 0
 	for _, row := range board {
