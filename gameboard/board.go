@@ -26,6 +26,11 @@ func NewBoardNumbered(height, width int) Board {
 	return board
 }
 
+// Liefert die i-te Zeile des Spielfelds.
+func (board Board) Row(i int) Row {
+	return board[i]
+}
+
 // Liefert die i-te Spalte des Spielfelds.
 func (board Board) Column(i int) Row {
 	result := Row{}

@@ -40,6 +40,23 @@ func ExampleBoard_numbered() {
 
 }
 
+func ExampleBoard_Row() {
+	board1 := Board{
+		{"X", "X", "O"},
+		{"O", "O", "O"},
+		{"O", "X", "X"},
+	}
+
+	fmt.Println(board1.Row(0))
+	fmt.Println(board1.Row(1))
+	fmt.Println(board1.Row(2))
+
+	// Output:
+	// [X X O]
+	// [O O O]
+	// [O X X]
+}
+
 func ExampleBoard_Column() {
 	board1 := Board{
 		{"X", "X", "O"},
