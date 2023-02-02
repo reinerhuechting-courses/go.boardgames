@@ -1,5 +1,7 @@
 package gameboard
 
+import "fmt"
+
 type Row []string
 
 // Konstruktor für eine Zeile mit der angegebenen Breite und initialer Füllung.
@@ -30,4 +32,14 @@ func (row Row) EntryCount(entry string) int {
 		}
 	}
 	return count
+}
+
+// Liefert eine String-Repräsentation der Zeile.
+// Diese Repräsentation ist für das Zeichnen des Spielfelds geeignet.
+func (row Row) String() string {
+	result := "|"
+	for _, e := range row {
+		result += fmt.Sprintf(" %s |", e)
+	}
+	return result
 }

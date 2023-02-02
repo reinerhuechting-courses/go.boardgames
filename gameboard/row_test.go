@@ -67,3 +67,14 @@ func ExampleRow_ContainsOnly_emptyrow() {
 	// true
 	// true
 }
+
+func ExampleRow_String() {
+	row1 := Row{"X", "X", "O"}
+	fmt.Println(row1)
+	row2 := Row{" ", " ", " "}
+	fmt.Println(row2)
+
+	// Output:
+	// | X | X | O |
+	// |   |   |   |
+}
