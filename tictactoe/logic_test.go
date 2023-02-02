@@ -15,9 +15,11 @@ func ExamplePlayerWins_x_row() {
 	fmt.Println(PlayerWins(board1, "X"))
 	fmt.Println(PlayerWins(board1, "O"))
 	fmt.Println(Draw(board1))
+	fmt.Println(GameRunning(board1))
 
 	// Output:
 	// true
+	// false
 	// false
 	// false
 }
@@ -31,9 +33,11 @@ func ExamplePlayerWins_x_col() {
 	fmt.Println(PlayerWins(board1, "X"))
 	fmt.Println(PlayerWins(board1, "O"))
 	fmt.Println(Draw(board1))
+	fmt.Println(GameRunning(board1))
 
 	// Output:
 	// true
+	// false
 	// false
 	// false
 }
@@ -47,9 +51,11 @@ func ExamplePlayerWins_x_diag1() {
 	fmt.Println(PlayerWins(board1, "X"))
 	fmt.Println(PlayerWins(board1, "O"))
 	fmt.Println(Draw(board1))
+	fmt.Println(GameRunning(board1))
 
 	// Output:
 	// true
+	// false
 	// false
 	// false
 }
@@ -63,9 +69,11 @@ func ExamplePlayerWins_x_diag2() {
 	fmt.Println(PlayerWins(board1, "X"))
 	fmt.Println(PlayerWins(board1, "O"))
 	fmt.Println(Draw(board1))
+	fmt.Println(GameRunning(board1))
 
 	// Output:
 	// true
+	// false
 	// false
 	// false
 }
@@ -79,8 +87,28 @@ func ExampleDraw() {
 	fmt.Println(PlayerWins(board1, "X"))
 	fmt.Println(PlayerWins(board1, "O"))
 	fmt.Println(Draw(board1))
+	fmt.Println(GameRunning(board1))
 
 	// Output:
+	// false
+	// false
+	// true
+	// false
+}
+
+func ExampleGameRunning() {
+	board1 := gameboard.Board{
+		{"O", "X", "O"},
+		{"O", " ", "O"},
+		{"X", "O", "X"},
+	}
+	fmt.Println(PlayerWins(board1, "X"))
+	fmt.Println(PlayerWins(board1, "O"))
+	fmt.Println(Draw(board1))
+	fmt.Println(GameRunning(board1))
+
+	// Output:
+	// false
 	// false
 	// false
 	// true
