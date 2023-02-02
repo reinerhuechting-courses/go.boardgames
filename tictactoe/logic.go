@@ -22,3 +22,11 @@ func GameRunning(board gameboard.Board) bool {
 		!PlayerWins(board, "O") &&
 		!Draw(board)
 }
+
+// Liefert den Spieler, der als nächstes am Zug ist.
+func NextPlayer(currentPlayer string) string {
+	if currentPlayer == "X" {
+		return "O"
+	}
+	return "X"
+}

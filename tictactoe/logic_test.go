@@ -113,3 +113,12 @@ func ExampleGameRunning() {
 	// false
 	// true
 }
+
+func ExampleNextPlayer() {
+	fmt.Println(NextPlayer("X"))
+	fmt.Println(NextPlayer("O"))
+
+	// Output:
+	// O
+	// X
+}
