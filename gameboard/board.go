@@ -1,6 +1,9 @@
 package gameboard
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 type Board []Row
 
@@ -94,4 +97,15 @@ func (board Board) EntryCount(entry string) int {
 		count += row.EntryCount(entry)
 	}
 	return count
+}
+
+// Liefert eine String-Repräsentation des Spielfelds.
+// Diese Repräsentation ist für das Zeichnen des Spielfelds geeignet.
+func (board Board) String() string {
+	divider := fmt.Sprintf("+%s\n", strings.Repeat("---+", len(board[0])))
+	result := divider
+	for _, row := range board {
+		result += fmt.Sprintf("%s\n%s", row.String(), divider)
+	}
+	return result
 }

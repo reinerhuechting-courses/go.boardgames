@@ -157,3 +157,17 @@ func ExampleBoard_EntryCount() {
 	// 2
 	// 2
 }
+
+func ExampleBoard_String() {
+	board1 := NewBoardNumbered(3, 3)
+	fmt.Println(board1)
+
+	// Output:
+	// +---+---+---+
+	// | 1 | 2 | 3 |
+	// +---+---+---+
+	// | 4 | 5 | 6 |
+	// +---+---+---+
+	// | 7 | 8 | 9 |
+	// +---+---+---+
+}
