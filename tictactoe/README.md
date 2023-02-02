@@ -15,4 +15,7 @@ hier soll diese Unterteilung zunächst ausreichen.
   und der Spieler ist einfach ein String, der das Zeichen des Spielers ("X" oder "O")
   enthält.
   Der Zweck dieser Funktionen ist es, den Spielzustand zu bestimmen, also
-ob das Spiel noch läuft, ein Spieler gewonnen hat oder es unentschieden beendet ist.
+  ob das Spiel noch läuft, ein Spieler gewonnen hat oder es unentschieden beendet ist.
+* [`game.go`](game.go)  
+  Umsetzung des eigentlichen Spiels.
+  Benutzt die Funktionen aus [`logic.go`](logic.go).
