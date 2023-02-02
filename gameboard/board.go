@@ -79,3 +79,10 @@ func (board Board) AnyColumnContainsOnly(entry string) bool {
 	}
 	return false
 }
+
+// Prüft, ob eine der Hauptdiagonalen des Spielfelds ausschließlich
+// den durch entry gegebenen String enthält.
+func (board Board) AnyDiagContainsOnly(entry string) bool {
+	return board.PrincipalDiag1().ContainsOnly(entry) ||
+		board.PrincipalDiag2().ContainsOnly(entry)
+}

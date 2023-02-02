@@ -125,3 +125,18 @@ func ExampleBoard_AnyColumnContainsOnly() {
 	// true
 	// true
 }
+
+func ExampleBoard_AnyDiagContainsOnly() {
+	board1 := Board{
+		{"O", "X", "P"},
+		{"O", "O", "P"},
+		{"O", "X", "O"},
+	}
+
+	fmt.Println(board1.AnyDiagContainsOnly("X"))
+	fmt.Println(board1.AnyDiagContainsOnly("O"))
+
+	// Output:
+	// false
+	// true
+}
