@@ -1,6 +1,10 @@
 package tictactoe
 
-import "github.com/reinerhuechting-courses/go.boardgames/gameboard"
+import (
+	"fmt"
+
+	"github.com/reinerhuechting-courses/go.boardgames/gameboard"
+)
 
 func Run() {
 	// Initialisierung des Spiels
@@ -25,5 +29,14 @@ func MakeMove(board gameboard.Board, currentPlayer string) gameboard.Board {
 
 // Gibt das Spielergebnis auf die Konsole aus.
 func PrintResult(board gameboard.Board) {
-	// TODO
+	fmt.Println("Das Spiel ist beendet.")
+	if PlayerWins(board, "X") {
+		fmt.Println("Spieler X gewinnt.")
+	}
+	if PlayerWins(board, "O") {
+		fmt.Println("Spieler O gewinnt.")
+	}
+	if Draw(board) {
+		fmt.Println("Es gibt keinen Gewinner.")
+	}
 }
