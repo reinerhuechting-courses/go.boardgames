@@ -2,6 +2,27 @@ package gameboard
 
 import "fmt"
 
+func ExampleRow_constructor() {
+	board1 := NewRow(3, "X")
+
+	fmt.Println(board1.ContainsOnly(" "))
+	fmt.Println(board1.ContainsOnly("X"))
+	fmt.Println(board1.ContainsOnly("O"))
+	fmt.Println(len(board1))
+	fmt.Println(board1[0])
+	fmt.Println(board1[1])
+	fmt.Println(board1[2])
+
+	// Output:
+	// false
+	// true
+	// false
+	// 3
+	// X
+	// X
+	// X
+}
+
 func ExampleRow_ContainsOnly_xrow() {
 	row1 := Row{"X", "X", "X"}
 
