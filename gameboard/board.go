@@ -40,6 +40,24 @@ func (board Board) Column(i int) Row {
 	return result
 }
 
+// Liefert die Hauptdiagonale des Spielfelds von links oben nach rechts unten.
+func (board Board) PrincipalDiag1() Row {
+	result := Row{}
+	for i, row := range board {
+		result = append(result, row[i])
+	}
+	return result
+}
+
+// Liefert die Hauptdiagonale des Spielfelds von links unten nach rechts oben.
+func (board Board) PrincipalDiag2() Row {
+	result := Row{}
+	for i, row := range board {
+		result = append(result, row[len(board)-i-1])
+	}
+	return result
+}
+
 // Prüft, ob eine der Zeilen des Spielfelds ausschließlich
 // den durch entry gegebenen String enthält.
 func (board Board) AnyRowContainsOnly(entry string) bool {

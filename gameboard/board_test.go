@@ -74,6 +74,24 @@ func ExampleBoard_Column() {
 	// [O O X]
 }
 
+func ExampleBoard_PrincipalDiag1() {
+	board1 := NewBoardNumbered(3, 3)
+
+	fmt.Println(board1.PrincipalDiag1())
+
+	// Output:
+	// [1 5 9]
+}
+
+func ExampleBoard_PrincipalDiag2() {
+	board1 := NewBoardNumbered(3, 3)
+
+	fmt.Println(board1.PrincipalDiag2())
+
+	// Output:
+	// [3 5 7]
+}
+
 func ExampleBoard_AnyRowContainsOnly() {
 	board1 := Board{
 		{"X", "X", "O"},
