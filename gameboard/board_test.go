@@ -40,6 +40,23 @@ func ExampleBoard_numbered() {
 
 }
 
+func ExampleBoard_Column() {
+	board1 := Board{
+		{"X", "X", "O"},
+		{"O", "O", "O"},
+		{"O", "X", "X"},
+	}
+
+	fmt.Println(board1.Column(0))
+	fmt.Println(board1.Column(1))
+	fmt.Println(board1.Column(2))
+
+	// Output:
+	// [X O O]
+	// [X O X]
+	// [O O X]
+}
+
 func ExampleBoard_AnyRowContainsOnly() {
 	board1 := Board{
 		{"X", "X", "O"},

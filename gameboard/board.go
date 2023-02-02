@@ -26,6 +26,15 @@ func NewBoardNumbered(height, width int) Board {
 	return board
 }
 
+// Liefert die i-te Spalte des Spielfelds.
+func (board Board) Column(i int) Row {
+	result := Row{}
+	for _, row := range board {
+		result = append(result, row[i])
+	}
+	return result
+}
+
 // Prüft, ob eine der Zeilen des Spielfelds ausschließlich
 // den durch entry gegebenen String enthält.
 func (board Board) AnyRowContainsOnly(entry string) bool {
