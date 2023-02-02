@@ -19,6 +19,27 @@ func ExampleBoard_constructor() {
 	// 4
 }
 
+func ExampleBoard_numbered() {
+	board1 := NewBoardNumbered(2, 3)
+	for _, row := range board1 {
+		fmt.Println(row)
+	}
+	fmt.Println()
+	board2 := NewBoardNumbered(3, 3)
+	for _, row := range board2 {
+		fmt.Println(row)
+	}
+
+	// Output:
+	// [1 2 3]
+	// [4 5 6]
+	//
+	// [1 2 3]
+	// [4 5 6]
+	// [7 8 9]
+
+}
+
 func ExampleBoard_AnyRowContainsOnly() {
 	board1 := Board{
 		{"X", "X", "O"},
