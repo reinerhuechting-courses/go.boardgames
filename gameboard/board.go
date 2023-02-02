@@ -86,3 +86,11 @@ func (board Board) AnyDiagContainsOnly(entry string) bool {
 	return board.PrincipalDiag1().ContainsOnly(entry) ||
 		board.PrincipalDiag2().ContainsOnly(entry)
 }
+
+func (board Board) EntryCount(entry string) int {
+	count := 0
+	for _, row := range board {
+		count += row.EntryCount(entry)
+	}
+	return count
+}

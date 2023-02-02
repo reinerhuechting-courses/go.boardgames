@@ -140,3 +140,20 @@ func ExampleBoard_AnyDiagContainsOnly() {
 	// false
 	// true
 }
+
+func ExampleBoard_EntryCount() {
+	board1 := Board{
+		{"O", "X", "P"},
+		{"O", "O", "P"},
+		{"O", "X", "O"},
+	}
+
+	fmt.Println(board1.EntryCount("O"))
+	fmt.Println(board1.EntryCount("X"))
+	fmt.Println(board1.EntryCount("P"))
+
+	// Output:
+	// 5
+	// 2
+	// 2
+}

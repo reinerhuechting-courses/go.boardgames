@@ -20,3 +20,13 @@ func (row Row) ContainsOnly(entry string) bool {
 	}
 	return true
 }
+
+func (row Row) EntryCount(entry string) int {
+	count := 0
+	for _, e := range row {
+		if e == entry {
+			count++
+		}
+	}
+	return count
+}
