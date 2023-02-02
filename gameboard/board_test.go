@@ -73,3 +73,20 @@ func ExampleBoard_AnyRowContainsOnly() {
 	// true
 	// false
 }
+
+func ExampleBoard_AnyColumnContainsOnly() {
+	board1 := Board{
+		{"O", "X", "P"},
+		{"O", "O", "P"},
+		{"O", "X", "P"},
+	}
+
+	fmt.Println(board1.AnyColumnContainsOnly("X"))
+	fmt.Println(board1.AnyColumnContainsOnly("O"))
+	fmt.Println(board1.AnyColumnContainsOnly("P"))
+
+	// Output:
+	// false
+	// true
+	// true
+}

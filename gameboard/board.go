@@ -45,3 +45,14 @@ func (board Board) AnyRowContainsOnly(entry string) bool {
 	}
 	return false
 }
+
+// Prüft, ob eine der Spalten des Spielfelds ausschließlich
+// den durch entry gegebenen String enthält.
+func (board Board) AnyColumnContainsOnly(entry string) bool {
+	for col := 0; col < len(board[0]); col++ {
+		if board.Column(col).ContainsOnly(entry) {
+			return true
+		}
+	}
+	return false
+}
