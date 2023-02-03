@@ -23,15 +23,39 @@ func Run() {
 
 // Fragt einen Zug vom angegebenen Spieler ab und führt diesen aus.
 func MakeMove(board gameboard.Board, currentPlayer string) gameboard.Board {
-	fmt.Println(board)
-	fmt.Printf("Spieler %s, du bist an der Reihe.\n", currentPlayer)
-	fmt.Print("Bitte wähle ein freies Feld für deinen Zug: ")
-	var input int
-	fmt.Scanln(&input)
-	input--
-	row := input / 3
-	column := input % 3
-	board[row][column] = currentPlayer
+	// Hilfsvariable für die Prüfung, ob ein gültiger Zug eingegeben wurde.
+	moveValid := false
+
+	// In einer Schleife nach Eingaben fragen, bis eine gültige Eingabe gemacht wurde:
+	for !moveValid {
+
+		// Spielfeld ausgeben:
+		fmt.Println(board)
+
+		// Spieler nach seinem Zug fragen:
+		fmt.Printf("Spieler %s, du bist an der Reihe.\n", currentPlayer)
+		fmt.Print("Bitte wähle ein freies Feld für deinen Zug: ")
+		var input int
+		fmt.Scanln(&input)
+
+		// Ziel-Position des Zuges berechnen:
+		input--
+		row := input / 3
+		column := input % 3
+
+		// Gültigkeit der Eingabe prüfen:
+		inputValid := input >= 0 && input <= 8
+		// Prüfen, ob die Eingabe erlaubt ist:
+		moveValid = inputValid && board[row][column] != "X" && board[row][column] != "O"
+
+		// Zug ausführen oder Fehlermeldung ausgeben:
+		if moveValid {
+			board[row][column] = currentPlayer
+		} else {
+			fmt.Println("Diese Eingabe ist nicht erlaubt!")
+			fmt.Println()
+		}
+	}
 	return board
 }
 
