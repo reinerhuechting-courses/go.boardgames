@@ -9,7 +9,7 @@ import (
 func Run() {
 	// Initialisierung des Spiels
 	currentPlayer := "X"
-	board := gameboard.NewBoard(3, 3, " ")
+	board := gameboard.NewBoardNumbered(3, 3)
 
 	// Game Loop
 	for GameRunning(board) {
@@ -23,7 +23,15 @@ func Run() {
 
 // Fragt einen Zug vom angegebenen Spieler ab und führt diesen aus.
 func MakeMove(board gameboard.Board, currentPlayer string) gameboard.Board {
-	// TODO
+	fmt.Println(board)
+	fmt.Printf("Spieler %s, du bist an der Reihe.\n", currentPlayer)
+	fmt.Print("Bitte wähle ein freies Feld für deinen Zug: ")
+	var input int
+	fmt.Scanln(&input)
+	input--
+	row := input / 3
+	column := input % 3
+	board[row][column] = currentPlayer
 	return board
 }
 
