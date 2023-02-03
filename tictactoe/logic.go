@@ -11,7 +11,7 @@ func PlayerWins(board gameboard.Board, player string) bool {
 
 // Liefert true, falls das Spiel mit dem Ergebnis "unentschieden" beendet ist.
 func Draw(board gameboard.Board) bool {
-	return board.EntryCount(" ") == 0 &&
+	return board.EntryCount("X")+board.EntryCount("O") == 9 &&
 		!PlayerWins(board, "X") &&
 		!PlayerWins(board, "O")
 }
